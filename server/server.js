@@ -23,6 +23,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Root route (optional)
+app.use('/api/auth', (await import('./routes/authRoutes.js')).default);
 app.get('/', (req, res) => {
   res.send('Bazar Backend is running...');
 });
